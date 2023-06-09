@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tab" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+      height: 100vh;
+      /* background-color: rgba(0, 0, 0, 0.4); */
+      /* background-color: rgba(46, 42, 42, 0.582); */
+      font-family: "Bebas Neue", sans-serif;
+    }
+    .head {
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+      font-size: 50px;
+      font-weight: bolder;
+    }
+    .two {
+      display: flex;
+      justify-content: center;
+      font-size: 40px;
+    }
+    .three {
+      display: flex;
+    }
+    .tabs {
+      display: flex;
+      height: 50px;
+      width: 600px;
+
+      margin-left: 20px;
+      justify-content: space-evenly;
+    }
+    .pp {
+      border: 1px;
+      width: 200px;
+      /* padding-left: 80px;*/
+      padding-top: 7px;
+      font-size: 25px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .pp:hover {
+      /* background-color: yellow; */
+      color: red;
+    }
+    .tab-content {
+      width: 600px;
+      margin-left: 45px;
+      padding: 50px 40px;
+      height: 300px;
+    }
+    .tab-content h4 {
+      font-size: 25px;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .tab-content p {
+      justify-content: justify;
+      line-height: 2;
+      word-spacing: 3px;
+      margin-bottom: 20px;
+    }
+    .tab-content div {
+      display: none;
+    }
+    .tab-content .active {
+      display: block;
+    }
+    .tabs .active {
+      background-color: white;
+      color: red;
+    }
+  </style>
+  <body>
+    <div class="head">About</div>
+    <div class="two">
+      <p style="margin-top: 0px">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quos .
+      </p>
+    </div>
+    <div class="three" style="margin-top: 30px; margin-left: 70px">
+      <div class="photo">
+        <img
+          src="./pexels-louis-2399391.jpg"
+          alt="img"
+          height="400px"
+          width="400px"
+        />
+      </div>
+      <div class="container">
+        <div class="tabs">
+          <p class="pp active">History</p>
+          <p class="pp">Visions</p>
+          <p class="pp">Goals</p>
+        </div>
+        <div class="tab-content">
+          <div class="active">
+            <h4>first</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex optio
+              dolorem eum voluptatum alias. Laborum atque error nam impedit
+              quos? Enim illum atque explicabo error maiores, reprehenderit
+              maxime dicta, fuga quod quas, placeat labore assumenda libero esse
+              ex? Tempora rerum, culpa sed non voluptatem porro est mollitia
+              accusantium quisquam. Nobis.
+            </p>
+          </div>
+          <div>
+            <h4>two</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
+              libero hic aliquam deleniti a veniam illo dolorum nam id laborum
+              pariatur repudiandae, ipsam quo ullam minus nostrum ipsa quod.
+              Harum porro molestiae ea explicabo? Aspernatur, explicabo hic?
+              Minus non fuga commodi provident, officiis corporis voluptate,
+              deleniti cumque, recusandae eos est!
+            </p>
+          </div>
+          <div>
+            <h4>three</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+              sit maxime obcaecati reprehenderit voluptatibus ullam tempora
+              corporis facilis eaque quidem! Unde suscipit temporibus a harum
+              amet error quasi illo soluta nam! Eum nisi fugit veritatis ducimus
+              alias vitae provident id quos quisquam fugiat, aliquid, saepe
+              aspernatur esse odit? Laboriosam, eius!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let tabs = document.querySelectorAll(".tabs p");
+      let tabContent = document.querySelectorAll(".tab-content div");
+      console.log(tabs);
+      console.log(tabContent);
+      tabs.forEach((tab, index) => {
+        console.log(tab);
+        tab.addEventListener("click", () => {
+          tabContent.forEach((content) => {
+            console.log(content);
+            content.classList.remove("active");
+          });
+          tabs.forEach((tab) => {
+            tab.classList.remove("active");
+          });
+          tabContent[index].classList.add("active");
+          tabs[index].classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
